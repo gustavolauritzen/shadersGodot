@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddorsub6h7u37"]
+
+[ext_resource type="Shader" uid="uid://vx0bn34x5u84" path="res://water_shader.gdshader" id="1_7x2x0"]
+[ext_resource type="Shader" uid="uid://c2wpkwne3wa35" path="res://hologram_shader.gdshader" id="2_65qx0"]
+[ext_resource type="Shader" uid="uid://cs076hrpbmt22" path="res://pulse_disintegrate_shader.gdshader" id="3_eo2u2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n75bq"]
+render_priority = 0
+shader = ExtResource("1_7x2x0")
+shader_parameter/wave_frequency = 10.0
+shader_parameter/wave_amplitude = 0.2
+shader_parameter/speed = 1.0
+shader_parameter/metallic_value = 0.2
+shader_parameter/roughness_value = 0.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_7x2x0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_adgoi"]
+render_priority = 0
+shader = ExtResource("2_65qx0")
+shader_parameter/scan_line_speed = 2.0
+shader_parameter/scan_line_width = 0.1
+shader_parameter/glitch_strength = 0.05
+shader_parameter/hologram_color = Color(0.3, 0.7, 1, 0.7)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ox1c1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jpsvu"]
+render_priority = 0
+shader = ExtResource("3_eo2u2")
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_strength = 0.5
+shader_parameter/pulse_color = Color(0, 1, 1, 1)
+shader_parameter/disintegrate_amount = 0.0
+shader_parameter/normal_distortion_strength = 0.5
+shader_parameter/metallic_override = 0.0
+shader_parameter/roughness_override = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_o203h"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Agua" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_n75bq")
+mesh = SubResource("SphereMesh_7x2x0")
+
+[node name="Holograma" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.29319)
+material_override = SubResource("ShaderMaterial_adgoi")
+mesh = SubResource("CylinderMesh_ox1c1")
+
+[node name="Desintegrando" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.80181)
+material_override = SubResource("ShaderMaterial_jpsvu")
+mesh = SubResource("SphereMesh_o203h")
