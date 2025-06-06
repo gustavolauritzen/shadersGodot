@@ -3,8 +3,8 @@ shader_type spatial;
 uniform float wave_frequency = 10.0;
 uniform float wave_amplitude = 0.1;
 uniform float speed = 1.0;
-uniform float metallic_value : hint_range(0.0, 1.0) = 0.2;
-uniform float roughness_value : hint_range(0.0, 1.0) = 0.1; // Atributo padrão alterado
+uniform float metallic_value : hint_range(0.0, 1.0) = 1.0;
+uniform float roughness_value : hint_range(0.0, 1.0) = 1.0; // Atributo padrão alterado
 
 varying vec3 world_pos;
 

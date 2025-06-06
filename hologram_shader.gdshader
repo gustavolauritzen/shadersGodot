@@ -16,8 +16,8 @@ void vertex() {
 
 	// Pequena alteração na posição do vértice para um efeito de "glitch" sutil
 	// Usando sin e cos com TIME para criar um movimento irregular e pequeno
-	float time_glitch = TIME * 5.0;
-	VERTEX.x += sin(time_glitch + VERTEX.y * 10.0) * glitch_strength * 0.1;
+	float time_glitch = TIME * 100.0;
+	VERTEX.x += sin(time_glitch + VERTEX.y * 1000.0) * glitch_strength * 0.1;
 	VERTEX.z += cos(time_glitch * 0.7 + VERTEX.x * 8.0) * glitch_strength * 0.08;
 
 	// Opcional: Alterar levemente as normais para distorcer o "brilho" do holograma
