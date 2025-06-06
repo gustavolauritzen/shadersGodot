@@ -286,7 +286,7 @@ shader_parameter/roughness_value = 1.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v1rkb"]
 render_priority = 0
 shader = ExtResource("5_adgoi")
-shader_parameter/metallic = 1.0
+shader_parameter/metallic = 0.7
 shader_parameter/roughness = 0.5
 shader_parameter/albedo_color = Vector4(0.8, 0.8, 0.8, 1)
 
@@ -324,7 +324,7 @@ material_override = SubResource("ShaderMaterial_ox1c1")
 mesh = ExtResource("4_n75bq")
 
 [node name="Model" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9038, 0, -0.119667)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9128, 1.19209e-07, -0.119549)
 material_override = SubResource("ShaderMaterial_o203h")
 mesh = SubResource("ArrayMesh_g411b")
 
